@@ -22,6 +22,14 @@ pipeline{
                   }
                }
             }
+            stage('Build Docker Image'){
+            steps{
+                script{
+
+                    docker_image = docker.build "${IMAGE_NAME}"
+                }
+            }
+        }
     }
 }
     //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
