@@ -38,7 +38,7 @@ pipeline{
                     docker_image = docker.build "${IMAGE_NAME}"
                 }
             }
-        }/*
+        }
         
         stage('Push Docker Image'){
             steps{
@@ -50,7 +50,8 @@ pipeline{
                     }
                 }
             }
-        }  */
+        }  
+    
         }
     }
 
