@@ -39,6 +39,17 @@ pipeline{
                 }
             }
         }
+        stage('Push Docker Image'){
+            steps{
+                script{
+
+                 docker.withRegistry('',REGISTRY_CREDS){
+                    docker_image.push("$BUILD_NUMBER")
+                    docker_image.push('latest')
+                }
+             }
+         }
+      }
     }
 }
     //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
