@@ -50,7 +50,15 @@ pipeline{
                     }
                 }
             }
-        }  
+        } 
+        stage('Delete Docker Image'){
+            
+            steps{
+
+                sh "docker rmi ${MAGE_NAME}:${IMAGE_TAG}"
+                sh "docker rmi ${MAGE_NAME}:latest"
+            }
+        } 
     
         }
     }
