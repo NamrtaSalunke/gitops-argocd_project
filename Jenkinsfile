@@ -49,7 +49,17 @@ pipeline{
                 }
              }
          }
-      }
+      } 
+      stage('Delete Docker images'){
+
+        steps{
+            script{
+                
+                sh "docker rmi ${IMAGE_NAME}:${IMAGE_TAG}"
+                sh "docker rmi ${IMAGE_NAME}:latest"
+            }
+         }
+       }
     }
 }
     //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
